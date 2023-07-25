@@ -25,14 +25,19 @@ GROUP BY b.Title
 ORDER BY SUM(oi.Quantity) DESC
 FETCH FIRST 1 ROWS ONLY;
 
-//Explore customer preferences based on their regions, popular book categories, and promotional items' effectiveness.
-
-SELECT c.Region,
-       b.Category,
+//Identify the month with the highest book sales and the best-selling book for that month
+SELECT TO_CHAR(o.OrderDate, 'YYYY-MM') AS "Month",
+       b.Title AS "Best-Selling Book",
        COUNT(oi.Order#) AS "Number of Orders"
-FROM Customers c
-JOIN Orders o ON c.Customer# = o.Customer#
+FROM Orders o
 JOIN OrderItems oi ON o.Order# = oi.Order#
 JOIN Books b ON oi.ISBN = b.ISBN
-GROUP BY c.Region, b.Category
-ORDER BY c.Region, b.Category;
+GROUP BY TO_CHAR(o.OrderDate, 'YYYY-MM'), b.Title
+HAVING COUNT(oi.Order#) = (SELECT MAX(orders_count) 
+                           FROM (SELECT TO_CHAR(o2.OrderDate, 'YYYY-MM') AS order_month,
+                                        COUNT(oi2.Order#) AS orders_count
+                                 FROM Orders o2
+                                 JOIN OrderItems oi2 ON o2.Order# = oi2.Order#
+                                 GROUP BY TO_CHAR(o2.OrderDate, 'YYYY-MM'), oi2.ISBN) sub_query)
+ORDER BY "Month", "Number of Orders" DESC
+FETCH FIRST 1 ROWS ONLY;
