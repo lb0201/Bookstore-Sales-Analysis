@@ -41,3 +41,11 @@ HAVING COUNT(oi.Order#) = (SELECT MAX(orders_count)
                                  GROUP BY TO_CHAR(o2.OrderDate, 'YYYY-MM'), oi2.ISBN) sub_query)
 ORDER BY "Month", "Number of Orders" DESC
 FETCH FIRST 1 ROWS ONLY;
+
+
+//Based on the given data, it can be inferred that "BODYBUILD IN 10 MINUTES A DAY" is the best-selling book in April,
+//and its popularity may be attributed to people's plans to get in shape before summer. 
+//Therefore, it can be concluded that if the bookstore sells more books related to bodybuilding and fitness, it can potentially increase its profits. 
+//With the data suggesting that this particular book performs well in April due to the upcoming summer season and people's interest in fitness goals, 
+//the bookstore can strengthen its marketing and merchandising efforts for books related to bodybuilding, exercise, health, diet, and nutrition. 
+//The bookstore can attract customers' attention and encourage purchases by offering a diverse selection of fitness-related books and organizing related events or promotions.
