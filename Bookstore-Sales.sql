@@ -5,7 +5,6 @@
 
 
 #Analyze book sales trends, including the total number of orders and sales revenue over time.
-
 SELECT TO_CHAR(OrderDate, 'YYYY-MM') AS "Month",
        COUNT(Order#) AS "Total Orders",
        SUM(b.Retail * oi.Quantity) AS "Sales Revenue"
