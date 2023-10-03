@@ -21,8 +21,8 @@ Analyzed results and outcome:
 
 ##  Files Used
 
-* Bookstore-Sales.sql: Final SQL file which contains the queries to analyze and investigate the book sales
-* Bookstore_Database.sql: Database file which contains the 6+ tables related to bookstore sales
+* Bookstore-Sales.sql
+* Bookstore_Database.sql
 
 ## Copyright, Authors, Acknowledgements
 
