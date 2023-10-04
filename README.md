@@ -11,9 +11,9 @@ SQL Bookstore Sales Analysis
 In this project, we aim to analyze a dataset containing information about bookstore sales and customer preferences. The dataset includes tables for Customers, Orders, Publisher, Author, Books, OrderItems, and more. Our goal is to gain insights into book sales patterns, customer preferences, and identify the best-selling book.
 
 ### Questions:
-* Analyze book sales trends, including the total number of orders and sales revenue over time
-* Identify the best-selling book and its corresponding sales revenue
-* Identify the month with the highest book sales and the best-selling book for that month
+1. Analyze book sales trends, including the total number of orders and sales revenue over time
+2. Identify the best-selling book and its corresponding sales revenue
+3. Identify the month with the highest book sales and the best-selling book for that month
 
 ### Results and outcome: 
 * Based on the given data, it can be inferred that "BODYBUILD IN 10 MINUTES A DAY" is the best-selling book in April, and its popularity may be attributed to people's plans to get in shape before summer.
